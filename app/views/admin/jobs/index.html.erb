@@ -4,8 +4,13 @@
 <table class="table table-boldered">
   <% @jobs.each do |job| %>
   <tr>
+
     <td>
+      <%= render_job_states(job) %>
       <%= link_to(job.title,admin_job_path(job))%>
+    </td>
+    <td>
+      [<%= job.company %>]
     </td>
 
     <td>
