@@ -1,23 +1,43 @@
-<div class="pull-right">
-  <!-- <%= link_to("Add a job",new_job_path,:class=>"btn btn-default" )%> -->
-</div>
-<table class="table table-boldered">
-  <% @jobs.each do |job| %>
-  <tr>
-    <td>
-      <%= link_to(job.title,job_path(job))%>
-    </td>
-    <td>
-      ［<%= job.company %>］
-    </td>
-    <!-- <td>
-      <%= link_to("Edit",edit_job_path(job))%> ｜
-      <%= link_to("Destroy",job_path(job),:method => :delete,:data =>{:confirm => "Are you sure?"} )%>
-    </td> -->
+<div class="hero-block" style="max-width:1000px;margin-top:20px;margin-left: auto;
+margin-right: auto;">
+  <div class="hero-inner">
+    <h1 class="hero-title"> 疯帽子 快聘网 </h1>
 
-    <td>
-      <%= job.created_at%>
-    </td>
-  </tr>
-  <% end %>
-</table>
+    <div class="hero-desc">
+      <p class="lead">
+        <br>
+        <%= link_to("疯帽子 快聘网", "/") %> 是一个“不让有才的你等太久”的闪电求职网站。
+      </p>
+      <p class="lead">
+        我们希望通过这个网站，能够让更多有才华的人能够在最短的时间里匹配上最适合自己的工作。
+      </p>
+    </div>
+
+  </div>
+</div>
+
+  <div class="pull-right">
+    <!-- <%= link_to("Add a job",new_job_path,:class=>"btn btn-default" )%> -->
+  </div>
+  <%= render :partial => "jobs/search_bar" %><br>
+  <table class="table table-boldered" style="max-width:1000px;margin-top:20px;margin-left: auto;
+  margin-right: auto;">
+    <% @jobs.each do |job| %>
+    <tr>
+      <td>
+        <%= link_to(job.title,job_path(job))%>
+      </td>
+      <td>
+        ［<%= job.company %>］
+      </td>
+      <!-- <td>
+        <%= link_to("Edit",edit_job_path(job))%> ｜
+        <%= link_to("Destroy",job_path(job),:method => :delete,:data =>{:confirm => "Are you sure?"} )%>
+      </td> -->
+
+      <td>
+        <%= job.created_at%>
+      </td>
+    </tr>
+    <% end %>
+  </table>

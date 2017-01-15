@@ -31,8 +31,31 @@ gem 'jbuilder', '~> 2.5'
 # gem 'capistrano-rails', group: :development
 gem "bootstrap-sass"
 gem "simple_form"
-# gem 'simple_form', '~> 3.1.0.rc1', github: 'plataformatec/simple_form', branch: 'master'
+# gem 'simple_form', '~> 3.1.0.rc1', github: 'plataformatec/_form', branch: 'master'
 gem "devise"
+gem 'font-awesome-rails'
+gem "ransack"
+gem "will_paginate"
+
+gem "fontawesome-rails"
+gem "validate_url"
+gem 'email_validator'
+
+gem "settingslogic"
+gem "rails_admin"
+gem "seo_helper"
+gem "open_graph_helper"
+
+gem 'roadie'
+
+gem "ultra_markdown"
+
+gem 'mailgun-rails'
+gem 'mailgun', :git => "https://github.com/HashNuke/mailgun.git"
+gem 'rails-bootstrap-markdown'
+
+gem "whenever"
+
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

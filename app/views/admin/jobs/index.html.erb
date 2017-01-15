@@ -1,13 +1,14 @@
-<div class="pull-right">
+<div class="pull-right" style="margin-bottom:10px;margin-top:10px;">
   <%= link_to("Add a job",new_admin_job_path,:class=>"btn btn-default" )%>
 </div>
-<table class="table table-boldered">
+<table class="table table-boldered" style="max-width:1000px;margin-top:20px;margin-left: auto;
+margin-right: auto;">
   <% @jobs.each do |job| %>
   <tr>
 
     <td>
       <%= render_job_states(job) %>
-      <%= link_to(job.title,admin_job_path(job))%>
+      <%= link_to("——"+job.title,admin_job_path(job))%>
     </td>
     <td>
       [<%= job.company %>]
@@ -16,6 +17,11 @@
     <td>
       <%= link_to("Edit",edit_admin_job_path(job))%> ｜
       <%= link_to("Destroy",admin_job_path(job),:method => :delete,:data =>{:confirm => "Are you sure?"} )%>
+      <% if job.is_hidden %>
+        <%= link_to("Publish", publish_admin_job_path(job) , :method => :post, :class => "btn btn-xs btn-default") %>
+      <% else %>
+      <%= link_to("Hide", hide_admin_job_path(job), :method => :post,  :class => "btn btn-xs btn-default") %>
+      <% end %>
     </td>
 
     <td>
