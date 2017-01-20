@@ -1,7 +1,8 @@
 <%= render :partial => "jobs/search_bar" %>
 
 <br>
-<div class="search-result">
+<div class="search-result" style="max-width:80%;margin-top:5px;margin-left: auto;
+margin-right: auto;">
 
   <table class="table table-borderd">
    <%= render :partial => "jobs/item", :collection => @jobs, :as => :job %>

@@ -1,0 +1,32 @@
+<div class="well landing">
+  <h2> 最新工作咨询 </h2>
+
+  <div class="desc">
+   <p>
+    <ul>
+      <li>本服务免费</li>
+      <li>每周为您更新一次最优质的工作</li>
+      <li>您也可以选择随时退订</li>
+    </ul>
+
+  </p>
+</div>
+
+
+
+</div>
+
+
+<div class="group">
+
+  <h2> 请输入您的电子邮箱 </h2>
+
+  <%= simple_form_for @subscription, :url => subscriptions_path ,  html: { class: 'form-horizontal' } , :wrapper => :horizontal_form,  :wrapper_mappings => {    check_boxes: :horizontal_radio_and_checkboxes,    radio_buttons: :horizontal_radio_and_checkboxes,    file: :horizontal_file_input,    boolean: :horizontal_boolean } do |f| %>
+      <%= f.input :name %>
+      <%= f.input :email %>
+
+    <div class="col-sm-11">
+      <%= f.submit "送出" , :class => "btn btn-lg btn-danger pull-right" %>
+    </div>
+  <% end %>
+</div>

@@ -19,6 +19,11 @@ Rails.application.routes.draw do
       end
     end
   end
+  resources :subscriptions do
+    member do
+      get :verify
+    end
+  end
 
   get "/pages/:action" , :controller => "pages"
 
