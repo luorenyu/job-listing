@@ -1,4 +1,6 @@
 class Job < ApplicationRecord
+  scope :recent, -> { order('created_at DESC') }
+  scope :published, -> { where(is_hidden: false) }
   validates :title ,presence:true
   validates :description, presence:true
   validates :contact_email, presence:true
