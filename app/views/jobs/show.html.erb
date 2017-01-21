@@ -1,7 +1,17 @@
-<div style="max-width:80%;margin-top:5px;margin-left: auto;
+<div class="well loading" style="max-width:80%;margin-top:25px;margin-left: auto;
 margin-right: auto;">
-<h1> <%= @job.title %></h1>
-  <p >
-    <%= simple_format(@job.description) %>
-  </p>
-</div
+  <h2 class="text-center" > <%= @job.title %></h2>
+  <div style="margin-left:180px;margin-top:30px" >
+    <ul>
+      <li ><%= "职位描述："+@job.description %></li><br>
+      <li ><%= "薪资待遇："+@job.wage_lower_bound.to_s + @job.wage_upper_bound.to_s %></li><br>
+      <li ><%= "招聘公司："+@job.company %></li><br>
+      <li ><%= "联系方式："+@job.contact_email %></li><br>
+  </ul>
+  </div>
+  <div class="text-center" style="margin-top:30px;margin-bottom:40px">
+    <button class="btn btn-primary">
+      <%= link_to("投交履历", new_job_resume_path(@job), :style => "color:white;font-size: 20px") %>
+    </button>
+  </div>
+</div>

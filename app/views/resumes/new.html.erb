@@ -1,0 +1,12 @@
+<div class="well loadding" style="max-width:80%;margin-top:40px;margin-left: auto;
+margin-right: auto;">
+  <h3> 投交履历到 <%= @job.title %> </h3>
+
+  <hr>
+
+  <%= simple_form_for [@job, @resume] do |f| %>
+    <%= f.input :content %>
+    <%= f.input :attachment %>
+    <%= f.submit "送出"%>
+  <% end %>
+</div>

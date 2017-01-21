@@ -55,6 +55,7 @@ gem 'mailgun', :git => "https://github.com/HashNuke/mailgun.git"
 gem 'rails-bootstrap-markdown'
 
 gem "whenever"
+gem 'carrierwave'
 
 
 group :development, :test do
