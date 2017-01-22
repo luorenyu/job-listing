@@ -1,7 +1,13 @@
 class SubscriptionsController < ApplicationController
+  def index
+    flash[:notice]="功能开发中，尽情期待..."
+    redirect_to jobs_path
+  end
 
   def new
-    @subscription = EmailSubscription.new
+    flash[:notice]="功能开发中，尽情期待..."
+    redirect_to jobs_path
+    # @subscription = EmailSubscription.new
     # set_page_title "订阅工作快讯"
   end
 

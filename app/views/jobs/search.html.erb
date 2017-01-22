@@ -1,11 +1,36 @@
 <%= render :partial => "jobs/search_bar" %>
 
 <br>
-<div class="search-result" style="max-width:80%;margin-top:5px;margin-left: auto;
+<div class="search-result" style="max-width:90%;margin-top:5px;margin-left: auto;
 margin-right: auto;">
 
-  <table class="table table-borderd">
-   <%= render :partial => "jobs/item", :collection => @jobs, :as => :job %>
- </table>
+
+
+ <table class="table table-boldered" style="max-width:80%;margin-top:40px;margin-left: auto;
+ margin-right: auto;">
+   <thead>
+     <tr>
+       <td>招聘岗位</td>
+       <td>招聘企业</td>
+       <td>薪资下限</td>
+       <td>薪资上限</td>
+       <td>发布时间</td>
+     </tr>
+   </thead>
+   <tbody>
+     <% @jobs.each do |job| %>
+     <tr>
+       <td><%= link_to(job.title,job_path(job))%></td>
+       <td>［<%= job.company %>］</td>
+       <td><%= job.wage_lower_bound%></td>
+       <td><%= job.wage_upper_bound%></td>
+       <td><%= job.created_at%></td>
+     </tr>
+     <% end %>
+   </tbody>
+
+   <!-- <table class="table table-borderd">
+    <%= render :partial => "jobs/item", :collection => @jobs, :as => :job %> -->
+  </table>
 
 </div>
